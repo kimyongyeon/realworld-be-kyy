@@ -1,0 +1,42 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:file:/tmp/sample
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  servlet:
+    multipart:
+      enabled: true
+      location: /tmp
+      max-request-size: 30MB
+      max-file-size: 10MB
+  security:
+    user:
+      name: admin
+      password: 1234
+
+upload:
+  path: upload
+
+
+logging:
+  pattern:
+    console: "%-5level %d{yyyy-MM-dd HH:mm:ss}[%thread] %logger[%method:%line] - %msg%n"
+  level:
+    root: info
+    com.real.worldkyy: debug

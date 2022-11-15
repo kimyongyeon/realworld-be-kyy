@@ -1,0 +1,16 @@
+### Send POST request with json body
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "email": "test-1234email@sdsdfsdf.com",
+  "password": "test-password",
+  "name": "test-name"
+}
+
+<> 2022-11-16T071654.200.json
+<> 2022-11-16T071645.200.json
+<> 2022-11-16T071238.200.json
+<> 2022-11-16T071130.200.json
+<> 2022-11-16T071039.200.json
+<> 2022-11-16T070904.200.json
