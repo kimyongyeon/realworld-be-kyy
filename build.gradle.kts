@@ -32,14 +32,27 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-security")
+//    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("com.auth0:java-jwt:3.8.1")
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
+    implementation("org.springframework.security:spring-security-crypto:5.7.3")
+
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
+//    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
+
+
+
+    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+    implementation("org.modelmapper:modelmapper:2.1.1")
+
+    // swagger-ui
+    implementation("io.springfox:springfox-boot-starter:3.0.0")
+//    implementation("io.springfox:springfox-swagger2:2.9.2")
+//    implementation("io.springfox:springfox-swagger-ui:2.9.2")
 
     // QueryDSL
     implementation("com.querydsl:querydsl-jpa:$queryDslVersion")

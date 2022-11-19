@@ -2,22 +2,22 @@ package com.real.worldkyy.service.customer
 
 import com.real.worldkyy.common.RealworldException
 import com.real.worldkyy.domain.Customer
-import com.real.worldkyy.dto.SignupDTO
+import com.real.worldkyy.dto.SignupRequestDTO
 import com.real.worldkyy.response.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.crypto.bcrypt.BCrypt
 import org.springframework.stereotype.Service
 
 @Service
-class SignupService @Autowired constructor (val customerService: CustomerService, val customerRepository: CustomerRepository) {
-    fun signup(signupDTO: SignupDTO) {
+class SignupService @Autowired constructor (val customerRepository: CustomerRepository) {
+    fun signup(signupDTO: SignupRequestDTO) {
         print(signupDTO)
         validateRequest(signupDTO)
         checkDuplicates(signupDTO.email)
         registerUser(signupDTO)
     }
 
-    private fun registerUser(signupDTO: SignupDTO) {
+    private fun registerUser(signupDTO: SignupRequestDTO) {
         with(signupDTO) {
             val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
             val user = Customer(email = signupDTO.email, username = signupDTO.name, password = hashedPassword)
@@ -30,7 +30,7 @@ class SignupService @Autowired constructor (val customerService: CustomerService
             throw RealworldException("이미 사용 중인 이메일입니다.")
         }
 
-    private fun validateRequest(signupDTO: SignupDTO) {
+    private fun validateRequest(signupDTO: SignupRequestDTO) {
         validateEmail(signupDTO.email)
         validateName(signupDTO.name)
         validatePassword(signupDTO.password)

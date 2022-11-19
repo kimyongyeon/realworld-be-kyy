@@ -1,6 +1,6 @@
 package com.real.worldkyy.dto
 
-data class SigninDTO(
+data class SigninRequestDTO(
     val email: String,
     val password: String
 )
