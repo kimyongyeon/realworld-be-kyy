@@ -10,7 +10,17 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 @EnableJpaAuditing
 class RealworldBeKyyApplication : ApplicationRunner{
     override fun run(args: ApplicationArguments?) {
+        fun findUsername(username: String) = "select * from Customer where username = ${username}"
+        val resultUsername = findUsername("hello")
 
+        val username = "hello"
+        val email = "test@naver.com"
+        val query = """
+            select * 
+            from Customer 
+            where username = ${username}
+            and email = ${email}
+        """.trimIndent()
     }
 }
 
