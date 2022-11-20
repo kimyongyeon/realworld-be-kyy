@@ -21,6 +21,20 @@ class RealworldBeKyyApplication : ApplicationRunner{
             where username = ${username}
             and email = ${email}
         """.trimIndent()
+
+        val list = listOf(1,2,3,4)
+        val toList = list.map { item -> item * 2 }
+            .filter { item -> item > 2 }
+            .toList()
+
+        val multi = {x: Int, y: Int -> x + y}
+
+        fun calc(a: Int, b: Int, callback: (x: Int, y: Int) -> Unit) {
+            callback(a, b)
+        }
+        calc(1, 2, {a, b -> a + b })
+
+
     }
 }
 
