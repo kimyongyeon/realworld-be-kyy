@@ -20,7 +20,7 @@ class SignupService @Autowired constructor (val customerRepository: CustomerRepo
     private fun registerUser(signupDTO: SignupRequestDTO) {
         with(signupDTO) {
             val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
-            val user = Customer(email = signupDTO.email, username = signupDTO.name, password = hashedPassword)
+            val user = Customer(email = email, username = name, password = hashedPassword)
             customerRepository.save(user)
         }
     }

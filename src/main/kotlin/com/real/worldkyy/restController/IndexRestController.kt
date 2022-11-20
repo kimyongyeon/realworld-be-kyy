@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController
 class IndexRestController {
 
     @GetMapping("/")
-    fun index(): ApiResponse {
-        return ApiResponse.ok("world")
-    }
+    fun index(): ApiResponse = ApiResponse.ok("world")
+
 }

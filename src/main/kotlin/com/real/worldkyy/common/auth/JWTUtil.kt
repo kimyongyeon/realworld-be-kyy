@@ -2,6 +2,7 @@ package com.real.worldkyy.common.auth
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
+import com.auth0.jwt.interfaces.DecodedJWT
 import java.util.*
 
 object JWTUtil {
@@ -15,6 +16,20 @@ object JWTUtil {
 
     private val refreshSecret = "5678"
     private  val refreshAlgorithm = Algorithm.HMAC256(refreshSecret)
+
+    fun verify(token: String): DecodedJWT =
+        JWT.require(algorithm)
+            .withIssuer(ISSUSER)
+            .build()
+            .verify(token)
+
+    fun verifyRefresh(token: String): DecodedJWT =
+        JWT.require(refreshAlgorithm)
+            .withIssuer(ISSUSER)
+            .build()
+            .verify(token)
+
+    fun extractEamil(jwt: DecodedJWT): String = jwt.getClaim(JWTClaims.EMAIL).asString()
 
     fun createToken(email: String) = JWT.create()
         .withIssuer(ISSUSER)

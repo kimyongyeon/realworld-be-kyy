@@ -9,20 +9,17 @@ import org.springframework.boot.test.context.SpringBootTest
 @SpringBootTest
 internal class CustomerServiceTest @Autowired constructor(
     // Autowired를 안하면 주입이 되지 않음.
-    val customerService: CustomerService,
     val customerRepository: CustomerRepository
 ) {
 
     @Test
     fun usernameTest() {
-        val findUserName = customerService.findUserName("kkk")
-        print(findUserName)
+//        val findUserName = customerService.findUserName("kkk")
     }
 
     @Test
     fun customerFindEmailTest() {
-        val email = customerService.findEmail("test@naver.com")
-        print(email);
+//        val email = customerService.findEmail("test@naver.com")
     }
 
     @Test

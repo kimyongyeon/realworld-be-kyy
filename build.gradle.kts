@@ -44,8 +44,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 //    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
 
-
-
     // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
     implementation("org.modelmapper:modelmapper:2.1.1")
 
