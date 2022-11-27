@@ -8,9 +8,9 @@ import javax.persistence.Id
 @Entity
 data class Customer (
     @Id
-    val email: String,
-    val username: String,
-    val password: String,
+    val email: String = "",
+    val username: String = "",
+    val password: String = "",
     var bio: String = "",
     var image: String = "",
 

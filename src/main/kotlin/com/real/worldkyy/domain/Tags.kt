@@ -9,6 +9,6 @@ import javax.persistence.Id
 data class Tags (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val tagNo: Long,
-    private val tagName: String
+    private val tagNo: Long = 0,
+    private val tagName: String = ""
 ) : BaseEntity() {}
